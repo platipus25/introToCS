@@ -19,15 +19,11 @@ task main()
 
   motor[rightMotor] = 0;
   motor[leftMotor] = 0;*/
-  int dist = 1200;
+  int dist = 800;
+  int speed = 100;
 
-  move(90, 50);
-  //move(dist, -120);
-  //move(dist*2, 120);
-  resetMotorEncoder(leftMotor);
-  resetMotorEncoder(rightMotor);
-  turn(360, 20);
-  //move(dist*2, -120);
-  //move(dist*3, 120);
-  //move(dist*3, -120);
+  for(int mult = 1; mult <= 4; mult++){
+  	move(dist*mult, speed);
+	  move(dist*mult, -speed);
+	}
 }
